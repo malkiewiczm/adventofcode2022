@@ -1,0 +1,25 @@
+body {
+	background-color: #eeeeee;
+}
+
+tr:nth-child(even) {
+	background-color: #dedfed;
+	border-left: 1px solid #ffffff;
+}
+
+td {
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: left;
+}
+
+table {
+	display: inline-block;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.center {
+	display: block;
+	margin: auto;
+	text-align: center;
+}
