@@ -16,7 +16,7 @@ static bool check_four(const std::string &s, int i)
 
 static int lcount(const std::string &s)
 {
-	FOR(i, s.size() - 3) {
+	FOR(i, SIZE(s) - 3) {
 		if (check_four(s, i))
 			return i + 4;
 	}
@@ -31,12 +31,12 @@ static bool check_fourteen(const std::string &s, int i)
 	FOR(a, 14) {
 		u.emplace(s[i + a]);
 	}
-	return u.size() == 14;
+	return SIZE(u) == 14;
 }
 
 static int lcount(const std::string &s)
 {
-	FOR(i, s.size() - 13) {
+	FOR(i, SIZE(s) - 13) {
 		if (check_fourteen(s, i))
 			return i + 14;
 	}

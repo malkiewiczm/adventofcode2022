@@ -27,13 +27,15 @@ using PriorityQueue = std::priority_queue<T, std::vector<T>, std::greater<T>>;
 #define trace(what)(TRACE << #what " = " << (what) << std::endl)
 #define lintf(fmt, ...)(printf("[line %d] " fmt, __LINE__, __VA_ARGS__))
 
-#define FOR(i, to) for (int i = 0; i < static_cast<int>(to); ++i)
-#define FOR2(i, from, to) for (int i = from; i < static_cast<int>(to); ++i)
-#define FOR3(i, from, to, step) for (int i = from; i < static_cast<int>(to); i += step)
+#define FOR(i, to) for (int i = 0; i < to; ++i)
+#define FOR2(i, from, to) for (int i = from; i < to; ++i)
+#define FOR3(i, from, to, step) for (int i = from; i < to; i += step)
 
 #define die() do { TRACE << "die() called" << std::endl; std::exit(1); } while(0)
 
+#define ALL(x) (x).begin(), (x).end()
 #define CONTAINS(map, key) ((map).find(key) != (map).end())
+#define SIZE(x) static_cast<int>((x).size())
 
 template <typename T0, typename T1>
 static inline std::ostream &operator<<(std::ostream &o, const std::pair<T0, T1> &rhs)

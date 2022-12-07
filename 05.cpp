@@ -18,8 +18,8 @@ int main(int argc, char **argv)
 			ins.push_back(line);
 		}
 	}
-	const int num_rows = static_cast<int>(ins.size());
-	const int num_crates = (ins[0].size() + 1) / 4;
+	const int num_rows = SIZE(ins);
+	const int num_crates = (SIZE(ins[0]) + 1) / 4;
 	std::vector<Stack> stacks(num_crates);
 	int row = 0;
 	for ( ; row < num_rows; ++row) {
@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 			stacks[from].pop_back();
 			buf.push_back(c);
 		}
-		for (int i = static_cast<int>(buf.size()) - 1; i >= 0; --i) {
+		for (int i = SIZE(buf) - 1; i >= 0; --i) {
 			const char c = buf[i];
 			stacks[to].push_back(c);
 		}

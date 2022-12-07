@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		}
 	}
 	ins.push_back(sum);
-	std::sort(ins.begin(), ins.end(), std::greater<int>());
+	std::sort(ALL(ins), std::greater<int>());
 	sum = 0;
 	FOR(i, 3) {
 		sum += ins[i];

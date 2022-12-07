@@ -12,8 +12,8 @@ static int priority(char c)
 
 static int unique_in_three(const std::string &x0, const std::string &x1, const std::string &x2)
 {
-	std::set<char> c0(x0.begin(), x0.end());
-	std::set<char> c1(x1.begin(), x1.end());
+	std::set<char> c0(ALL(x0));
+	std::set<char> c1(ALL(x1));
 	for (const auto &c : x2) {
 		if (CONTAINS(c0, c) && CONTAINS(c1, c)) {
 			return priority(c);
@@ -36,10 +36,10 @@ int main(int argc, char **argv)
 	std::string line;
 	int sum = 0;
 	while (std::getline(f, line)) {
-		const int half = line.size() / 2;
+		const int half = SIZE(line) / 2;
 		std::set<char> c0;
 		std::set<char> c1;
-		FOR(i, line.size()) {
+		FOR(i, SIZE(line)) {
 			if (i < half) {
 				c0.emplace(line[i]);
 			} else {
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
 		lines.push_back(line);
 	}
 	int sum = 0;
-	for (int i = 0; i < static_cast<int>(lines.size()); i += 3) {
+	FOR2(i, SIZE(lines), 3) {
 		sum += unique_in_three(lines[i], lines[i + 1], lines[i + 2]);
 	}
 	trace(sum);
