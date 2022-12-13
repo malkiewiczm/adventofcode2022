@@ -11,6 +11,7 @@
 #include <limits>
 #include <map>
 #include <math.h>
+#include <memory>
 #include <numeric>
 #include <ostream>
 #include <queue>
